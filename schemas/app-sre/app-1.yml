@@ -425,6 +425,37 @@ properties:
       - team
       - projects
 
+  glitchtipProjects:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        team:
+          "$ref": "/common-1.json#/definitions/crossref"
+          "$schemaRef": "/dependencies/glitchtip-team-1.yml"
+        projects:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              name:
+                type: string
+                maxLength: 30
+              description:
+                type: string
+              platform:
+                type: string
+            required:
+            - name
+            - description
+            - platform
+      required:
+      - team
+      - projects
+
+
 required:
 - "$schema"
 - labels
